@@ -109,7 +109,7 @@ hr {
     margin: 20px 0;
 }
 
-/* ==== Bloc contact ==== */
+/* ==== Bloc contact corrigé ==== */
 .contact-card {
     display: flex;
     align-items: flex-start;
@@ -120,18 +120,21 @@ hr {
     padding: 15px;
     margin: 30px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: nowrap; /* évite le passage en colonne */
 }
 
 .contact-photo img {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* réduit la largeur de la photo */
+    height: 120px; /* réduit la hauteur de la photo */
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    flex-shrink: 0; /* empêche la photo de se réduire en flex */
 }
 
 .contact-info {
     flex: 1;
+    min-width: 0; /* permet au texte de rester à droite même si l’espace est étroit */
 }
 
 .contact-info h2 {
@@ -153,4 +156,3 @@ hr {
 .contact-info a:hover {
     text-decoration: underline;
 }
-
